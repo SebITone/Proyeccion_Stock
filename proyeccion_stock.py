@@ -3,6 +3,12 @@ import pandas as pd
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
+st.set_page_config(
+    page_title="Mi App de Productos",
+    page_icon="📦"  # También podés usar un emoji como ícono
+)
+
+
 st.title("📦 Proyección de Stock en base a Consumo y Vencimientos")
 
 # --- Entradas ---
