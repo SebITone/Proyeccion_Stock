@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
+from collections import Counter
 
 st.set_page_config(
     page_title="Mi App de Productos",
