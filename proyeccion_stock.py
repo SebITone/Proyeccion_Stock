@@ -96,14 +96,20 @@ if st.button("Generar proyección"):
             excluir_vto_origen = False
         
         # Armar la lista de vencimientos sin repetir el de origen si aparece en la otra columna
-        vencimientos_mostrados = []
+        from collections import Counter
+
+        # Contar cuántas veces se usó cada vencimiento
+        vencimientos_contados = Counter()
         for unidad in unidades_usadas:
             vto_str = unidad["vencimiento"].strftime("%d/%m/%Y")
             if unidad["origen"] == "Lote nuevo" and (
                 (cumple_vto_str == vto_str) or (cumple_vto_str == "❌ No")
             ):
-                continue  # No mostrar en lista principal
-            vencimientos_mostrados.append(vto_str)
+                continue
+            vencimientos_contados[vto_str] += 1
+
+        # Armar string tipo: "30 x 20/10/2025"
+        vencimientos_mostrados = [f"{cant} x {vto}" for vto, cant in vencimientos_contados.items()]
 
 
         proyeccion.append({
