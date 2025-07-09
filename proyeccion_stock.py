@@ -11,6 +11,9 @@ st.set_page_config(
 
 
 st.title("📦 Proyección de Stock en base a Consumo y Vencimientos")
+st.subheader("Anticipá necesidades y evitá quiebres o vencimientos innecesarios")
+
+st.text("Esta aplicación permite estimar el consumo mensual de insumos y productos, proyectando la disponibilidad futura de stock en función de la demanda histórica y las fechas de vencimiento. Identificá con anticipación los faltantes críticos, los lotes que deben rotarse y optimizá la gestión del inventario para mejorar la toma de decisiones y reducir pérdidas.")
 
 # --- Entradas ---
 consumo_promedio = st.number_input("Consumo promedio mensual (unidades)", min_value=0.1, value=2.0)
